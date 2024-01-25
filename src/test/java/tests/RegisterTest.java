@@ -34,8 +34,6 @@ public class RegisterTest {
                 .entryTitlePresent()
                 .setEmailLoginInput(EnvHelper.getEmail())
                 .setPasswordLoginInput(EnvHelper.getPassword());
-        MainPage mainPage = loginPageAfterRegistration.clickEntryLoginButton()
-                .orderButtonPresent();
     }
 
     @Description("Тест проводит проверку неуспешной регистрации пользователя при вводе некорректного пароля")

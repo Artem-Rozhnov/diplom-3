@@ -33,14 +33,9 @@ public class MainPage {
     @FindBy(xpath = "//span[contains(@class, 'text_type_main-default') and contains(text(), 'Начинки')]")
     private WebElement fillings;
 
-    @FindBy(css = "a[href='/ingredient/61c0c5a71d1f82001bdaaa6d']")
-    private WebElement bunIngredient;
+    @FindBy(xpath = "//div[contains(@class, 'current')]/span")
+    private WebElement currentTab;
 
-    @FindBy(css = "a[href='/ingredient/61c0c5a71d1f82001bdaaa72']")
-    private WebElement sousesIngredient;
-
-    @FindBy(css = "a[href='/ingredient/61c0c5a71d1f82001bdaaa6f']")
-    private WebElement fillingsIngredient;
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -82,23 +77,6 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка отображения ингредиента на странице Булки")
-    public MainPage assertBunsIngredient() {
-        assertTrue(bunIngredient.isDisplayed());
-        return this;
-    }
-
-    @Step("Проверка отображения ингредиента на странице Соусы")
-    public MainPage assertSousesIngredient() {
-        assertTrue(sousesIngredient.isDisplayed());
-        return this;
-    }
-
-    @Step("Проверка отображения ингредиента на странице Начинки")
-    public MainPage assertFillingIngredient() {
-        assertTrue(fillingsIngredient.isDisplayed());
-        return this;
-    }
 
     @Step("Нажатие на таб Соусы")
     public MainPage clickSouses() {
@@ -109,6 +87,12 @@ public class MainPage {
     @Step("Нажатие на таб Начинки")
     public MainPage clickFillings() {
         fillings.click();
+        return this;
+    }
+
+    @Step("Получить текущий таб")
+    public MainPage getCurrentTab() {
+        currentTab.getText();
         return this;
     }
 }
