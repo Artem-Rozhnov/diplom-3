@@ -14,10 +14,10 @@ public class MainTest {
     @Test
     public void testSousesTabs() {
         String expectedTab = "Соусы";
-        MainPage basePage = new MainPage(driverRule.getDriver())
+        String basePage = new MainPage(driverRule.getDriver())
                 .clickSouses()
                 .getCurrentTab();
-        assertEquals("Вкладка не переключилась", expectedTab, basePage.toString());
+        assertEquals("Вкладка не переключилась", expectedTab, basePage);
 
     }
 
@@ -25,19 +25,20 @@ public class MainTest {
     @Test
     public void testBunsTabs() {
         String expectedTab = "Булки";
-        MainPage basePage = new MainPage(driverRule.getDriver())
+        String basePage = new MainPage(driverRule.getDriver())
                 .clickBuns()
                 .getCurrentTab();
-        assertEquals("Вкладка не переключилась", expectedTab, basePage.toString());
+        assertEquals("Вкладка не переключилась", expectedTab, basePage);
     }
 
     @Description("Тест проводит проверку перехода к разделу Начинки")
     @Test
     public void testFillingsTabs() {
         String expectedTab = "Начинки";
-        MainPage basePage = new MainPage(driverRule.getDriver())
+        String basePage = new MainPage(driverRule.getDriver())
                 .clickFillings()
                 .getCurrentTab();
-        assertEquals("Вкладка не переключилась", expectedTab, basePage.toString());
+        assertEquals("Вкладка не переключилась", expectedTab, basePage);
     }
+
 }

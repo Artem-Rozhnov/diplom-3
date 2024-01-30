@@ -17,6 +17,7 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.RegisterPage;
 
+
 public class LoginTest {
     @Rule
     public DriverRule driverRule = new DriverRule();
@@ -33,7 +34,7 @@ public class LoginTest {
                 .setInputName(EnvHelper.getName())
                 .setInputEmail(generatedEmail)
                 .setInputPassword(EnvHelper.getPassword());
-        LoginPage loginPageAfterRegistration = registerPage.clickRegisterButton()
+        registerPage.clickRegisterButton()
                 .entryTitlePresent();
     }
 
@@ -44,7 +45,7 @@ public class LoginTest {
         LoginPage loginPage = basePage.clickPersonalAccountButton()
                 .setEmailLoginInput(generatedEmail)
                 .setPasswordLoginInput(EnvHelper.getPassword());
-        MainPage loggedInMainPage = loginPage.clickEntryLoginButton()
+        loginPage.clickEntryLoginButton()
                 .orderButtonPresent();
     }
 
@@ -55,7 +56,7 @@ public class LoginTest {
         LoginPage loginPage = basePage.clickEntryButton()
                 .setEmailLoginInput(generatedEmail)
                 .setPasswordLoginInput(EnvHelper.getPassword());
-        MainPage basePageAfterLogin = loginPage.clickEntryLoginButton()
+        loginPage.clickEntryLoginButton()
                 .orderButtonPresent();
     }
 
@@ -68,7 +69,7 @@ public class LoginTest {
         LoginPage loginPageAfterResetPassword = forgotPasswordPage.clickEntryForgotPasswordButton()
                 .setEmailLoginInput(generatedEmail)
                 .setPasswordLoginInput(EnvHelper.getPassword());
-        MainPage basePageAfterLogin = loginPageAfterResetPassword.clickEntryLoginButton()
+        loginPageAfterResetPassword.clickEntryLoginButton()
                 .orderButtonPresent();
     }
 
@@ -81,7 +82,7 @@ public class LoginTest {
         LoginPage loginPageAfterRegistration = registerPage.clickEntryButton()
                 .setEmailLoginInput(generatedEmail)
                 .setPasswordLoginInput(EnvHelper.getPassword());
-        MainPage basePageAfterLogin = loginPageAfterRegistration.clickEntryLoginButton()
+        loginPageAfterRegistration.clickEntryLoginButton()
                 .orderButtonPresent();
     }
 

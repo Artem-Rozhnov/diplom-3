@@ -33,7 +33,7 @@ public class MainPage {
     @FindBy(xpath = "//span[contains(@class, 'text_type_main-default') and contains(text(), 'Начинки')]")
     private WebElement fillings;
 
-    @FindBy(xpath = "//div[contains(@class, 'current')]/span")
+    @FindBy(xpath = "//div[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span")
     private WebElement currentTab;
 
 
@@ -91,8 +91,7 @@ public class MainPage {
     }
 
     @Step("Получить текущий таб")
-    public MainPage getCurrentTab() {
-        currentTab.getText();
-        return this;
+    public String getCurrentTab() {
+        return currentTab.getText();
     }
 }
